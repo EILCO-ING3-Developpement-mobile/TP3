@@ -6,6 +6,7 @@ import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -14,6 +15,7 @@ import android.widget.*;
 
 public class TP3Activity extends AppCompatActivity {
     public static final String EXTRA_LEVEL = "EXTRA_LEVEL";
+    private static final String TAG = "message";
     private Button btnAjouterUnPoint;
     private TextView txtViewCurrentScore;
     private TextView txtViewCurrentLevel;
@@ -23,6 +25,7 @@ public class TP3Activity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        Log.v(TAG, "Fonction onCreate(Bundle savedInstanceState) applée");
         setContentView(R.layout.activity_tp3);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -40,6 +43,7 @@ public class TP3Activity extends AppCompatActivity {
         txtViewCurrentScore=(TextView) findViewById(R.id.txtViewCurrentScore);
         txtViewCurrentLevel=(TextView) findViewById(R.id.txtViewCurrentLevel);
         btnReinitialiserLeJeu=(Button) findViewById(R.id.btnReinitialiserLeJeu);
+
     }
 
     @Override
@@ -90,8 +94,54 @@ public class TP3Activity extends AppCompatActivity {
 
     }
 
-    //redefinition des methodes OnCreate et OnPause ...
-    
+    @Override
+    public void onDestroy(){
+
+        Log.v(TAG, "Fonction onDestroy() applée");
+        super.onDestroy();
+    }
+
+    @Override
+    public void onStart(){
+        super.onStart();
+        Log.v(TAG, "Fonction onStart() applée");
+    }
+
+
+    @Override
+    public void onStop(){
+        Log.v(TAG, "Fonction inStop() applée");
+        super.onStop();
+    }
+
+    @Override
+    public void onRestart(){
+        super.onRestart();
+        Log.v(TAG, "Fonction onRestart() applée");    }
+
+    @Override
+    public void onPause(){
+        Log.v(TAG, "Fonction onPause() applée");
+        super.onPause();
+    }
+
+    @Override
+    public void onResume(){
+        super.onResume();
+        Log.v(TAG, "Fonction onResume() applée");    }
+
+    @Override
+    public void onSaveInstanceState(Bundle savedInstanceState) {
+        Log.v(TAG, "Fonction onSaveInstanceState() applée");
+        super.onSaveInstanceState(savedInstanceState);
+    }
+
+
+    @Override
+    public void onRestoreInstanceState(Bundle savedInstanceState) {
+        super.onRestoreInstanceState(savedInstanceState);
+        Log.v(TAG, "Fonction onRestoreInstanceState() applée");
+    }
 
 
 }
