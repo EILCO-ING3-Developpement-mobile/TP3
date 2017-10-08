@@ -89,4 +89,9 @@ public class TP3Activity extends AppCompatActivity {
         txtViewCurrentLevel.setText(String.valueOf(initialLevel));
 
     }
+
+    //redefinition des methodes OnCreate et OnPause ...
+    
+
+
 }
